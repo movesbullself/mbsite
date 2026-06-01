@@ -137,7 +137,7 @@ nav a:hover {
 .play-button i {
   font-size: 42px;
   margin-left: 8px;
-  color: white;
+  color: gray;
 }
 
 .video-overlay {
