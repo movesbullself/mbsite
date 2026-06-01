@@ -1,71 +1,235 @@
-<!DOCTYPE html>
-<html lang="ru">
+!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STRONG BLOG | MOVESBULL</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MB</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.7;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+}
+
+section{
+    padding:100px 10%;
+}
+
+h1{
+    font-size:4rem;
+    font-weight:700;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+p{
+    color:#bfbfbf;
+    max-width:700px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:30px;
+}
+
+.subtitle{
+    color:#888;
+    margin-top:10px;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:1px solid #333;
+    padding:12px 24px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+}
+
+.bio{
+    max-width:900px;
+    margin:auto;
+}
+
+.bio p{
+    margin-bottom:20px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    transition:.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.02);
+}
+
+.footer{
+    text-align:center;
+    padding:80px 20px;
+    color:#666;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    section{
+        padding:70px 7%;
+    }
+
+    .hero img{
+        width:180px;
+        height:180px;
+    }
+
+}
+
+</style>
 </head>
-<body class="bg-zinc-950 text-white">
 
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-black/90 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <div>
-        <h1 class="text-4xl font-black tracking-tighter text-orange-500">STRONG BLOG</h1>
-        <p class="text-sm tracking-[4px] text-zinc-400 -mt-1">MOVESBULL</p>
-      </div>
-      
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#" class="hover:text-orange-500 transition-colors">BIO</a>
-        <a href="#" class="hover:text-orange-500 transition-colors">PHOTO</a>
-        <a href="https://www.donationalerts.com/r/aakgking" class="bg-orange-600 hover:bg-black-500 px-7 py-3 rounded font-semibold transition-all">DONATE</a>
-      </nav>
+<body>
 
-      <button id="mobile-menu-button" class="md:hidden text-3xl">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+<section class="hero">
+
+    <img src="images/profile.jpg" alt="Profile">
+
+    <h1>MovesBullSelf</h1>
+
+    <div class="subtitle">
+        Philosophy • Self Development • Creativity
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-zinc-800 py-6">
-      <div class="flex flex-col items-center gap-6 text-lg">
-        <a href="#" class="hover:text-orange-500">BIO</a>
-        <a href="#" class="hover:text-orange-500">PHOTO</a>
-        <a href="#" class="bg-orange-600 hover:bg-black-500 px-10 py-3 rounded font-semibold">DONATE</a>
-      </div>
-    </div>
-  </header>
+    <div class="nav-buttons">
 
-  <!-- HERO with Video -->
-  <section class="hero-bg min-h-screen flex items-center relative">
-    <div class="max-w-5xl mx-auto px-6 text-center pt-20 w-full">
-      <div class="max-w-4xl mx-auto mt-10">
-        <div id="video-container" class="relative aspect-video bg-black rounded-3xl overflow-hidden border-2 border-zinc-700 shadow-2xl">
-          
-          <!-- Play Overlay -->
-          <div id="play-overlay" class="absolute inset-0 flex items-center justify-center bg-black/40 z-10 cursor-pointer transition-all hover:bg-black/30">
-            <div class="w-28 h-28 bg-orange-600 hover:bg-orange-500 rounded-full flex items-center justify-center transition-all hover:scale-110">
-              <i class="fa-solid fa-play text-5xl ml-2 text-white"></i>
-            </div>
-          </div>
+        <a href="#bio" class="btn">BIO</a>
 
-          <!-- Video Player -->
-          <div id="video-player" class="hidden w-full h-full">
-            <iframe id="youtube-iframe" width="100%" height="100%" 
-                    src="https://vk.com/video_ext.php?oid=-238363548&id=456239033&autoplay=1" 
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+        <a href="#gallery" class="btn">GALLERY</a>
+
+        <a href="#donate" class="btn">DONATE</a>
+
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-zinc-950 to-transparent"></div>
-  </section>
+</section>
 
-  <script src="script.js"></script>
+<section id="bio">
+
+    <div class="bio">
+
+        <h2>Biography</h2>
+
+        <p>
+            My name is Egor.
+            I am interested in psychology, philosophy,
+            self-development and understanding the deeper
+            mechanisms behind human behavior.
+        </p>
+
+        <p>
+            This project is a space where I share ideas,
+            photographs and thoughts that challenge
+            conventional perspectives and encourage
+            independent thinking.
+        </p>
+
+        <p>
+            My goal is not simply to create content,
+            but to document a lifelong process of growth,
+            exploration and self-mastery.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="gallery">
+
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+
+        <img src="images/photo1.jpg" alt="">
+        <img src="images/photo2.jpg" alt="">
+        <img src="images/photo3.jpg" alt="">
+        <img src="images/photo4.jpg" alt="">
+        <img src="images/photo5.jpg" alt="">
+        <img src="images/photo6.jpg" alt="">
+
+    </div>
+
+</section>
+
+<section id="donate">
+
+    <h2>Support</h2>
+
+    <p>
+        If my work inspires you and you would like to
+        support future projects, you can contribute below.
+    </p>
+
+    <br><br>
+
+    <a href="#" class="btn">
+        Donate
+    </a>
+
+</section>
+
+<div class="footer">
+
+    © 2026 MovesBullSelf
+
+</div>
+
 </body>
 </html>
